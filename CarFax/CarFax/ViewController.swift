@@ -10,10 +10,12 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var datasource = [CarList]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        loadDatasource()
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +31,15 @@ private extension ViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    func loadDatasource() {
+        API.shared.getCarData { (items) in
+            guard let items = items else { return }
+            self.datasource = items
+            self.tableView.reloadData()
+            
+        }
+    }
 }
 
 
@@ -39,7 +50,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.datasource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

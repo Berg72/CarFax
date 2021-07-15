@@ -21,3 +21,8 @@ struct CarList: Codable {
     let state : String
     
 }
+
+struct CarListUrl: Codable {
+    let regular: String
+    let small: String
+}
