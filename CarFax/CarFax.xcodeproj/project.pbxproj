@@ -13,6 +13,7 @@
 		D9AA169B269FD43000C4FDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AA1699269FD43000C4FDCC /* Main.storyboard */; };
 		D9AA169D269FD43100C4FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9AA169C269FD43100C4FDCC /* Assets.xcassets */; };
 		D9AA16A0269FD43100C4FDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AA169E269FD43100C4FDCC /* LaunchScreen.storyboard */; };
+		D9AA16A8269FDFB600C4FDCC /* CarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA16A7269FDFB600C4FDCC /* CarList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D9AA169C269FD43100C4FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9AA169F269FD43100C4FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9AA16A1269FD43100C4FDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9AA16A7269FDFB600C4FDCC /* CarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D9AA1693269FD43000C4FDCC /* AppDelegate.swift */,
 				D9AA1695269FD43000C4FDCC /* SceneDelegate.swift */,
 				D9AA1697269FD43000C4FDCC /* ViewController.swift */,
+				D9AA16A7269FDFB600C4FDCC /* CarList.swift */,
 				D9AA1699269FD43000C4FDCC /* Main.storyboard */,
 				D9AA169C269FD43100C4FDCC /* Assets.xcassets */,
 				D9AA169E269FD43100C4FDCC /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				D9AA1698269FD43000C4FDCC /* ViewController.swift in Sources */,
 				D9AA1694269FD43000C4FDCC /* AppDelegate.swift in Sources */,
+				D9AA16A8269FDFB600C4FDCC /* CarList.swift in Sources */,
 				D9AA1696269FD43000C4FDCC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
