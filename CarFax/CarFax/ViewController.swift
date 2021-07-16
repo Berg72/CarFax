@@ -28,6 +28,7 @@ private extension ViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 150.0
+        tableView.register(UINib(nibName: "CarList", bundle: nil), forCellReuseIdentifier: "CarListCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -54,6 +55,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CarListCell", for: indexPath)
+        
+        if let cell = cell as? CarListCell {
+            cell.configure(carlist: self.datasource[indexPath.row])
+        }
+        
+        return cell
     }
 }

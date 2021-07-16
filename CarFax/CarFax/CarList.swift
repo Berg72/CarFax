@@ -19,10 +19,11 @@ struct CarList: Codable {
     let mileage: Int
     let city: String
     let state : String
+    let baseUrl: CarListUrl
     
 }
 
 struct CarListUrl: Codable {
-    let regular: String
+    let medium: String
     let small: String
 }
