@@ -18,7 +18,8 @@ struct CarList: Codable {
     let listprice: Int
     let mileage: Int
     let city: String
-    let state : String
+    let state: String
+    let phone: Int
     let baseUrl: CarListUrl
     
 }

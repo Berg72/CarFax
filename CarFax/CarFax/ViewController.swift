@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var datasource = [CarList]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,6 @@ class ViewController: UIViewController {
         loadDatasource()
         // Do any additional setup after loading the view.
     }
-
 
 }
 
@@ -28,7 +28,7 @@ private extension ViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 150.0
-        tableView.register(UINib(nibName: "CarList", bundle: nil), forCellReuseIdentifier: "CarListCell")
+        tableView.register(UINib(nibName: "CarListCell", bundle: nil), forCellReuseIdentifier: "CarListCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -41,6 +41,7 @@ private extension ViewController {
             
         }
     }
+    
 }
 
 

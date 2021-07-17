@@ -14,6 +14,7 @@ class CarListCell: UITableViewCell {
 //    @IBOutlet weak var makelabel: UILabel!
 //    @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var callButton: UIButton!
 //    @IBOutlet weak var milesLabel: UILabel!
 //    @IBOutlet weak var locationLabel: UILabel!
 
@@ -33,5 +34,6 @@ class CarListCell: UITableViewCell {
         priceLabel.text = "\(carlist.listprice) | "; "\(carlist.mileage) | "; "\(carlist.city) , "; "\(carlist.state)"
     }
    
+    
     
 }
