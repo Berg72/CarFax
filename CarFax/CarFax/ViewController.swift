@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         loadDatasource()
-        // Do any additional setup after loading the view.
     }
 
 }

@@ -38,7 +38,7 @@ class CarListCell: UITableViewCell {
         let attributedAmount = NSMutableAttributedString(string: amount, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12.0, weight: .semibold)])
         attributedAmount.append(NSAttributedString(string: " | \(carlist.mileage)K MI | \(carlist.dealer.city ?? " "), \(carlist.dealer.state ?? " ")", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12.0, weight: .regular)]))
         
-//        priceLabel.text = "\(amount) | \(carlist.mileage)K MI | \(carlist.dealer.city ?? " "), \(carlist.dealer.state ?? " ")"
+
         priceLabel.attributedText = attributedAmount
         
         callButton.setTitle(format(with: "(XXX) XXX-XXXX", phone: carlist.dealer.phone ?? " "), for: .normal)
@@ -47,15 +47,12 @@ class CarListCell: UITableViewCell {
     func format(with mask: String, phone: String) -> String {
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
         var result = ""
-        var index = numbers.startIndex // numbers iterator
-
-        // iterate over the mask characters until the iterator of numbers ends
+        var index = numbers.startIndex
+        
         for ch in mask where index < numbers.endIndex {
             if ch == "X" {
                 
                 result.append(numbers[index])
-
-                
                 index = numbers.index(after: index)
 
             } else {
@@ -66,8 +63,6 @@ class CarListCell: UITableViewCell {
     }
     
     @IBAction func callButtonAction(_ sender: Any) {
-    
-
 
         if let url = URL(string: "tel://\(phone ?? " ")"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
