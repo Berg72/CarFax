@@ -8,23 +8,32 @@
 import Foundation
 
 struct AllCars: Codable {
-    let listings:[AllCars]
+    var listings: [CarList]
 }
 
 struct CarList: Codable {
     let year: Int
     let make: String
-    let model: String?
-    let listprice: Int
+    let model: String
+    let listPrice: Double
     let mileage: Int
-    let city: String
-    let state: String
-    let phone: Int
-    let baseUrl: CarListUrl
+    let images: Images
+    let dealer: Dealer
+    
     
 }
 
-struct CarListUrl: Codable {
-    let medium: String
-    let small: String
+struct Images: Codable {
+    let firstPhoto: FirstPhoto
+}
+
+struct FirstPhoto: Codable {
+    let medium: URL?
+    let small: URL?
+}
+
+struct Dealer: Codable {
+    let city: String?
+    let state: String?
+    let phone: String?
 }

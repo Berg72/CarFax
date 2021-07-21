@@ -11,13 +11,13 @@ class API {
     
     static let shared = API()
     
-    func getCarData(onComplete: @escaping (_ items: [CarList]?) -> ()) {
+    func getCarData(onComplete: @escaping (_ items: AllCars?) -> ()) {
         
         guard let url = URL(string: "https://carfax-for-consumers.firebaseio.com/assignment.json") else { return }
         
         
         var request = URLRequest(url: url)
-        request.httpMethod = "Get"
+        request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
@@ -27,7 +27,7 @@ class API {
             do {
                 
                 let decoder = JSONDecoder()
-                let json = try decoder.decode([CarList].self, from: data)
+                let json = try decoder.decode(AllCars.self, from: data)
                 DispatchQueue.main.async {
                     onComplete(json)
                 }
@@ -39,12 +39,12 @@ class API {
         task.resume()
     }
     
-    func getImage(urlString: String, onComplete: @escaping (_ data: Data?) -> ()) {
+    func getImage(url: URL?, onComplete: @escaping (_ data: Data?) -> ()) {
         
-        guard let url = URL(string: urlString) else { return }
+        guard let url = url else { return }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "Get"
+        request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {

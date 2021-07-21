@@ -36,7 +36,7 @@ private extension ViewController {
     func loadDatasource() {
         API.shared.getCarData { (items) in
             guard let items = items else { return }
-            self.datasource = items
+            self.datasource = items.listings
             self.tableView.reloadData()
             
         }
